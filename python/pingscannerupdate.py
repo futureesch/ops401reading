@@ -32,7 +32,7 @@ def sendupalert():
     server.ehlo()
     server.login(email, password)
     ms2 = "Look out!!! \nYour connection is DOWN.\n %s % timestamp"
-    server.sendmail('attackwithcare@gmail.com', email, msg2)
+    server.sendmail('care@gmail.com', email, msg2)
     server.quit()
 
 def senddownalert():
@@ -42,7 +42,7 @@ def senddownalert():
     server.ehlo()
     server.login(email, password)
     ms2 = "Look out!!! \nYour connection is DOWN.\n %s % timestamp"
-    server.sendmail('attackwithcare@gmail.com', email, msg2)
+    server.sendmail('care@gmail.com', email, msg2)
     server.quit()
 
 while True:
