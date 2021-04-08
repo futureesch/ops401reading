@@ -17,13 +17,15 @@ def scanner():
         print("Start : %s" % time.ctime())
         if res == 0:
             print("ping to", address, "success!")
+            sendupalert()
         elif res == 2:
             print("no response from", address)
         else:
             print("ping to", address, "failed!")
+            senddownaltert()
     time.sleep(2)
 
-def send_downAlert():
+def sendupalert():
     now = datetime.datetime.now()
     timestamp = now.strftime('%m-%d-%Y %H:%M:%S %p')  
     server = smtplib.SMTP_SSL("smtp.gmail.com," 465) # Server I'm sending from
@@ -33,7 +35,7 @@ def send_downAlert():
     server.sendmail('attackwithcare@gmail.com', email, msg2)
     server.quit()
 
-def send_downAlert():
+def senddownalert():
     now = datetime.datetime.now()
     timestamp = now.strftime('%m-%d-%Y %H:%M:%S %p')  
     server = smtplib.SMTP_SSL("smtp.gmail.com," 465) # Server I'm sending from
