@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
 # Author: Tom Esch
-# Last Revised: April 7th, 2021
-# Purpose: Ping Drop Alert
+# Last Revised: April 6th, 2021
+# Purpose: Ping Status Email Alert
 
 # Look up how to wrap PW in an environmental variable
 #  mxtoolbox.com
 
 #Import Libraries 
-import smtplib,subprocess,time
+import smtplib,subprocess,time,getpass
 
 def scanner():
     for ping in range(1):
@@ -23,20 +23,27 @@ def scanner():
             print("ping to", address, "failed!")
     time.sleep(2)
 
+def send_downAlert():
+    now = datetime.datetime.now()
+    timestamp = now.strftime('%m-%d-%Y %H:%M:%S %p')  
+    server = smtplib.SMTP_SSL("smtp.gmail.com," 465) # Server I'm sending from
+    server.ehlo()
+    server.login(email, password)
+    ms2 = "Look out!!! \nYour connection is DOWN.\n %s % timestamp"
+    server.sendmail('attackwithcare@gmail.com', email, msg2)
+    server.quit()
+
+def send_downAlert():
+    now = datetime.datetime.now()
+    timestamp = now.strftime('%m-%d-%Y %H:%M:%S %p')  
+    server = smtplib.SMTP_SSL("smtp.gmail.com," 465) # Server I'm sending from
+    server.ehlo()
+    server.login(email, password)
+    ms2 = "Look out!!! \nYour connection is DOWN.\n %s % timestamp"
+    server.sendmail('attackwithcare@gmail.com', email, msg2)
+    server.quit()
+
 while True:
     scanner()
 
-# To be continued...
 
-server = smtplib.SMTP_SSL("smtp.gmail.com," 465) # Server I'm sending from
-server.ehlo()
-
-server.login("attackwithcare@gmail.com", "xxxxaaaaa") # Login to the server
-
-msg = "The host status has changed: it is DOWN"
-server.sendmail("attackwithcare@gmail.com", "tom@tomeschmusic.com", msg)
-server.quit() # Send email for UP to DOWN 
-
-msg = "The host status has changed: it is UP"
-server.sendmail("attackwithcare@gmail.com", "tom@tomeschmusic.com", msg)
-server.quit() # Send email for DOWN to UP
