@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Author: Tom Esch
-# Last Revised: April 6th, 2021
+# Last Revised: April 7th, 2021
 # Purpose: Ping Status Email Alert
 
 # Look up how to wrap PW in an environmental variable
