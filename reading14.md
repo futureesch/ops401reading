@@ -1,0 +1,7 @@
+Reading14
+
+A network intrusion detection system (NIDS) are “like fire alarms.” Just like an alarm, you still need to hear it and act. There to detect suspicious or nefarious activity, notifying the system administrator with information. Off to the side of the network, monitors traffic, using management console and sensors. Sensors seek matches to a previously detected attack, they report the activity to the console. “An IDS can notify security personnel of infections, spyware or key loggers, as well as accidental information leakage, security policy violations, unauthorized clients and servers, and even configuration errors.”
+
+IPS is similar to an IDS, except they block potential threats too--without administrator prompting. Careful configuration--as always--a must.
+
+Host Intrusion Detection Systems (HIDS) compared with a NIDS differ by the position of the sensors: network-based (monitoring the ethernet or WiFi) and host-based Network-based sensors have a quicker response than host-based sensors and they are also easier to implement. NIDS can detect attacks that an HIDS will miss because it looks at packet headers in real-time. HIDS will be able to pick up some things that an NIDS will miss, such as unauthorized users making changes to the system files. An HIDS monitors event and audit logs, comparing new entries to attack signatures. This is resource intensive, so your organization will need to plan for the additional hardware required.
