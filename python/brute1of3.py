@@ -25,14 +25,15 @@ def iterator ():
 # def check_password()
 def recognizer ():
     searchstring = input("Enter the string you wish to search:\n")
-    filepath = input("Enter your dictionary filepath:\n")
+    source = input("Enter your dictionary filepath:\n")
 
-    file = open(filepath, "r") as file:     
-        if string in file.read():
+    with open(source, "r") as file:
+
+        if searchstring in file.read():
             print("\nThe search string appeared in the word list.")
         else:
-            print("\nThe search string did not appear in the word list.")
-
+            print("\nThe search string did NOT--I repeat, did NOT--appear in the word list.")
+    
 # Main
 
 if __name__ == "__main__": # when my computer runs this file...do this stuff
@@ -47,7 +48,7 @@ Brue Force Wordlist Attack Tool Menu
         if (mode == "1"):
             iterator()
         elif (mode == "2"):
-            check_password()
+            recognizer()
         elif (mode == '3'):
             break
         else:
