@@ -27,10 +27,11 @@ def recognizer ():
     searchstring = input("Enter the string you wish to search:\n")
     filepath = input("Enter your dictionary filepath:\n")
 
-    file = open(filepath, "r")
-    
-
-# Add password recognition code here
+    file = open(filepath, "r") as file:     
+        if string in file.read():
+            print("\nThe search string appeared in the word list.")
+        else:
+            print("\nThe search string did not appear in the word list.")
 
 # Main
 
