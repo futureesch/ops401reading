@@ -1,6 +1,6 @@
 #!/usr/bin/env python3 
 
-# Purpose - AttackDefenseTool
+# Purpose - Brute Force Attacker
 # Author - Tom Esch
 # Last Revised - 4/28/2021
 
@@ -76,17 +76,12 @@ def connectssh ():
             response = ssh_connect(password)
 
             if response == 0:
-                print("%s[*] User: %s [*] Pass Found %s%s" % (line, username, 
-password, 
-    line))
+                print("%s[*] User: %s [*] Pass Found %s%s" % (line, username, password, line))
                 sys.exit(0)
             elif response == 1:
-                print("[*] User: %s [*] Pass: %s => Login Incorrect !!! <=" % 
-    (username, password))
+                print("[*] User: %s [*] Pass: %s => Login Incorrect !!! <=" % (username, password))
             elif response == 2: 
-                print("[*] Connection Could NOT Be Established To Address: %s" % 
-(host)
-    ) 
+                print("[*] Connection Could NOT Be Established To Address: %s" % (host)) 
                 sys.exit(2)
         except Exception as e:
             print (e)
